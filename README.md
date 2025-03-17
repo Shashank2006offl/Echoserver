@@ -40,17 +40,20 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             if not data:
                 break
             conn.sendall(data)
+
 ```
 ### Client
 ```
 import socket
 HOST = "127.0.0.1"  
-PORT = 65432 
+PORT = 65432
+
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     s.sendall(b"Hello, world")
     data = s.recv(1024)
 print(f"Received {data!r}")
+
 ```
 ## OUTPUT:
 ![image](https://github.com/user-attachments/assets/23f45d24-ee74-4b16-83cc-1bd4345785cb)
